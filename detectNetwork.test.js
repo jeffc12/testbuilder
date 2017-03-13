@@ -7,8 +7,8 @@
 // other places in this file where you'll replace the FILL_ME_IN with a
 // different value.
 var FILL_ME_IN = 'Fill this value in';
-
-describe('Introduction to Mocha Tests - READ ME FIRST', function() {
+/*
+describe('Introduction to Mocha Tests - ', function() {
   // A Mocha test is just a function!
   // If the function throws an error when run, it fails.
   // If it doesn't throw an error when run, it doesn't fail.
@@ -40,7 +40,7 @@ describe('Introduction to Mocha Tests - READ ME FIRST', function() {
       throw new Error('10 should be even!');
     }
   });
-});
+});*/
 describe('Diner\'s Club', function() {
   // Be careful, tests can have bugs too...
 
@@ -200,5 +200,53 @@ for (var i = 9; i <= 16; i++) {
 }
 });
 
-describe('should support China UnionPay')
+describe('China UnionPay', function() {
+
+  var should = chai.should();
+// for range 622126 to 622925
+for (var i = 11; i <= 14; i++){
+  (function(i) {
+
+for (var prefix = 622126; prefix <= 622925; prefix++) {
+  (function(prefix) {
+
+    it('has a prefix of '+ prefix +' and a length of '+ (i + 5), function() {
+      detectNetwork(prefix.toString() + (new Array(i)).join(' ')).should.equal('China UnionPay');
+    });
+  })(prefix)
+}
+  })(i)
+}
+// for range 624-626
+for (var i = 14; i <= 17; i++){
+  (function(i) {
+
+for (var prefix = 624; prefix <= 626; prefix++) {
+  (function(prefix) {
+
+    it('has a prefix of '+ prefix +' and a length of '+ (i + 2), function() {
+      detectNetwork(prefix.toString() + (new Array(i)).join(' ')).should.equal('China UnionPay');
+    });
+  })(prefix)
+}
+  })(i)
+}
+// for range 6282 to 6288
+for (var i = 13; i <= 16; i++){
+  (function(i) {
+
+for (var prefix = 6282; prefix <= 6288; prefix++) {
+  (function(prefix) {
+
+    it('has a prefix of '+ prefix +' and a length of '+ (i + 3), function() {
+      detectNetwork(prefix.toString() + (new Array(i)).join(' ')).should.equal('China UnionPay');
+    });
+  })(prefix)
+}
+  })(i)
+}
+
+});
+
+
 describe('should support Switch')
