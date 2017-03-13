@@ -59,7 +59,18 @@ var detectNetwork = function(cardNumber) {
 
           return "Maestro";
         }
-        
+      // China UnionPay if Statement test
+      //
+      //detectNetwork('6228261111111111')
+      //detectNetwork('62881111111111')
+      if (((Number(cardNumber.substring(0,6)) >= 622126 && Number(cardNumber.substring(0,6)) <= 622925) ||
+         (Number(cardNumber.substring(0,3)) >= 624 && Number(cardNumber.substring(0,3)) <= 626) ||
+         (Number(cardNumber.substring(0,4)) >= 6282 && Number(cardNumber.substring(0,4)) <= 6288))
+        && (cardNumber.length >= 16 && cardNumber.length <= 19)) {
+
+         return "China UnionPay";
+       }
+
   		else {
   			return undefined;
   		}
