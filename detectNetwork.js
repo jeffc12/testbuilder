@@ -29,8 +29,8 @@ var detectNetwork = function(cardNumber) {
       Make sure that you continue to support Diner's Club and American Express cards. Keep testing your implementation here in the console.
       */
       //Visa if Statement
-      if (cardNumber.substring(0,2) === "4"
-  			&& (cardNumber.length === 15 || cardNumber.length === 13 || cardNumber.length === 19)) {
+      if (cardNumber.substring(0,1) === "4"
+  			&& (cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19)) {
 
   			return "Visa";
   		}
