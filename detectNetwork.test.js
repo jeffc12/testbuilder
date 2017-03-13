@@ -41,6 +41,9 @@ describe('Introduction to Mocha Tests - ', function() {
     }
   });
 });*/
+
+// TOTAL PASSED TEST 3324
+// DURATION 1.96s 
 describe('Diner\'s Club', function() {
   // Be careful, tests can have bugs too...
 
@@ -200,6 +203,7 @@ for (var i = 9; i <= 16; i++) {
 }
 });
 
+
 describe('China UnionPay', function() {
 
   var should = chai.should();
@@ -249,4 +253,58 @@ for (var prefix = 6282; prefix <= 6288; prefix++) {
 });
 
 
-describe('should support Switch')
+
+describe('should support Switch', function() {
+
+var expect = chai.expect;
+
+// for all length of 4 prefix
+for (var i = 13; i <= 16; i++) {
+  (function(i) {
+    if ( i !== 14) {
+
+  it('has a prefix of 4903 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('4903' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 4905 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('4905' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 4911 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('4911' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 4936 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('4936' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 6333 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('6333' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 6759 and a length of '+ (i + 3), function() {
+    expect(detectNetwork('6759' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+}
+})(i)
+}
+// for the length of 6 prefix
+for (var i = 11; i <= 14; i++) {
+  (function(i) {
+    if ( i !== 12) {
+
+  it('has a prefix of 564182 and a length of '+ (i + 5), function() {
+    expect(detectNetwork('564182' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+  it('has a prefix of 633110 and a length of '+ (i + 5), function() {
+    expect(detectNetwork('633110' + (new Array(i)).join(' '))).to.equal('Switch');
+  });
+
+}
+})(i)
+}
+
+
+});
